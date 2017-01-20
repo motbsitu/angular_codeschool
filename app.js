@@ -13,6 +13,7 @@
     this.review ={};
 
     this.addReview = function(product){
+      this.review={"createdOn": Date.now()};
       product.reviews.push(this.review);
       this.review ={};
     };
@@ -30,6 +31,13 @@
     };
     this.isSelected = function(checkTab){
       return this.tab === checkTab;
+    };
+  });
+
+  app.directive('productTitle', function(){
+    return {
+      restrict: 'E', //element
+      templateUrl: 'product-title.html'
     };
   });
 
