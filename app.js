@@ -36,8 +36,24 @@
 
   app.directive('productTitle', function(){
     return {
-      restrict: 'E', //element
+      restrict: 'E', //type of directive - new HTML element
+      //use restrict: 'A', if an attribute directive - in HTML would be
+      //<h3 product-title></h3>, normally used for mixin behaviors
       templateUrl: 'product-title.html'
+    };
+  });
+
+  app.directive('productDescription', function(){
+    return{
+      restrict: 'E',
+      templateUrl: 'product-description.html'
+    };
+  });
+// attribute directive
+  app.directive("productSpecs", function(){
+    return{
+      restrict: 'A',
+      templateUrl: "product-specs.html"
     };
   });
 
